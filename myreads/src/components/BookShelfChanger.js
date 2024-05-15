@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class BookShelfChanger extends Component {
+class BookshelfChanger extends Component {
   shelfState = {
     value: this.props.shelf,
   };
 
   onShelfChange = (event) => {
     const { value } = event.target;
-    this.setState({ valeu });
+    this.setState({ value });
     this.props.onMove(this.props.book, value);
   };
 
