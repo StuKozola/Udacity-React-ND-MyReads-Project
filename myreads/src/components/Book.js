@@ -1,5 +1,5 @@
 import React from "react";
-import BookShelfChanger from "./BookShelfChanger";
+import BookShelfChanger from "./BookshelfChanger";
 
 const Book = ({ book, shelf, onMove }) => (
   <li>

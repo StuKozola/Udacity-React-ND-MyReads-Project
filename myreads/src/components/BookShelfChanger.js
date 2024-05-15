@@ -28,4 +28,4 @@ class BookshelfChanger extends Component {
   }
 }
 
-export default BookShelfChanger;
+export default BookshelfChanger;
