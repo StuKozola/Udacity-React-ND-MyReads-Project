@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import * as BooksAPI from "./BooksAPI";
@@ -49,8 +44,9 @@ const App = () => {
     BooksAPI.getAll().then((data) => {
       setBooks(data);
       setBookIDs(createBookMap(data));
+      //console.log(data);
     });
-  });
+  }, []);
 
   // create search listing of conbined books from bookshelves
   useEffect(() => {
@@ -62,14 +58,18 @@ const App = () => {
       }
     });
     setCombinedBooks(combined);
-  }, [searchBooks]);
+  }, [BookIDs, searchBooks]);
 
   // build the app screen
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Bookcase />}></Route>
-        <Route path="/search"></Route>
+        <Route
+          exact
+          path="/"
+          element={<Bookcase books={books} updateBookshelf={updateBookshelf} />}
+        ></Route>
+        <Route path="/search" element={<SearchBooks />}></Route>
       </Routes>
     </Router>
   );

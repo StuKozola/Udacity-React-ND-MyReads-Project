@@ -1,7 +1,7 @@
 import React from "react";
 import Bookshelf from "./Bookshelf";
 
-const Bookshelves = ({ books, listBookOnShelf }) => {
+const Bookshelves = ({ books, updateBookshelf }) => {
   const currentlyReading = books.filter(
     (book) => book.shelf === "currentlyReading"
   );
@@ -11,12 +11,12 @@ const Bookshelves = ({ books, listBookOnShelf }) => {
   return (
     <div>
       <Bookshelf
-        title="Currently Reading"
+        shelf="Currently Reading"
         books={currentlyReading}
-        onChange={listBookOnShelf}
+        onMove={updateBookshelf}
       />
-      <Bookshelf title="Read" books={wantToRead} onChange={listBookOnShelf} />
-      <Bookshelf title="Want to Read" books={read} onChange={listBookOnShelf} />
+      <Bookshelf shelf="Read" books={wantToRead} onMove={updateBookshelf} />
+      <Bookshelf shelf="Want to Read" books={read} onMove={updateBookshelf} />
     </div>
   );
 };

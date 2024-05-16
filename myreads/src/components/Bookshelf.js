@@ -3,14 +3,15 @@ import Book from "./Book";
 
 const Bookshelf = (props) => {
   const { shelf, books, onMove } = props;
-  const booksOnShelf = books.filter((book) => book.shelf === shelf.key);
   return (
     <div className="bookshelf">
-      <h2 className="bookshelf-title">{shelf.name}</h2>
+      <h2 className="bookshelf-title">{shelf}</h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
-          {booksOnShelf.map((book) => (
-            <Book key={book.id} book={book} shelf={shelf.key} onMove={onMove} />
+          {books.map((book) => (
+            <li key={book.id}>
+              <Book book={book} shelf={book.shelf} onMove={onMove} />
+            </li>
           ))}
         </ol>
       </div>

@@ -3,13 +3,8 @@ import { Link } from "react-router-dom";
 import SearchInput from "./SearchInput";
 import SearchResults from "./SearchResults";
 
-const SearchBooks = ({
-  searchBooks,
-  currentBooks,
-  onSearch,
-  onMove,
-  onCloseSearch,
-}) => {
+const SearchBooks = (props) => {
+  const { searchBooks, currentBooks, onMove, onSearch, onCloseSearch } = props;
   return (
     <div className="search-books">
       <div className="search-books-bar">
