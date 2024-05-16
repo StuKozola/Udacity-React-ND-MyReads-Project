@@ -50,14 +50,14 @@ const App = () => {
 
   // create search listing of conbined books from bookshelves
   useEffect(() => {
-    const combined = searchBooks.map((book) => {
+    const combinedBooks = searchBooks.map((book) => {
       if (BookIDs.has(book.id)) {
         return BookIDs.get(book.id);
       } else {
         return book;
       }
     });
-    setCombinedBooks(combined);
+    setCombinedBooks(combinedBooks);
   }, [BookIDs, searchBooks]);
 
   // build the app screen
