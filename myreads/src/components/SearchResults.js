@@ -2,7 +2,7 @@ import React from "react";
 import Book from "./Book";
 
 const SearchResults = (props) => {
-  const { searchBooks, currentBooks, onMove } = props;
+  const { searchBooks, currentBooks, updateBookshelf } = props;
   const updatedBookList = searchBooks.map((book) => {
     currentBooks.map((b) => {
       if (b.id === book.id) {
@@ -12,16 +12,14 @@ const SearchResults = (props) => {
     });
     return book;
   });
+
   return (
     <div className="search-books-results">
       <ol className="books-grid">
         {updatedBookList.map((book) => (
-          <Book
-            key={book.id}
-            book={book}
-            shelf={book.shelf ? book.shelf : "none"}
-            onMove={onMove}
-          />
+          <li id={book.id}>
+            <Book book={book} updateBookshelf={updateBookshelf} />
+          </li>
         ))}
       </ol>
     </div>

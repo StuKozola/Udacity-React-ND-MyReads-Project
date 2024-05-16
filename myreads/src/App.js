@@ -69,7 +69,18 @@ const App = () => {
           path="/"
           element={<Bookcase books={books} updateBookshelf={updateBookshelf} />}
         ></Route>
-        <Route path="/search" element={<SearchBooks />}></Route>
+        <Route
+          path="/search"
+          element={
+            <SearchBooks
+              searchBooks={searchBooks}
+              query={query}
+              setQuery={setQuery}
+              updateBookshelf={updateBookshelf}
+              combinedBooks={combinedBooks}
+            />
+          }
+        ></Route>
       </Routes>
     </Router>
   );

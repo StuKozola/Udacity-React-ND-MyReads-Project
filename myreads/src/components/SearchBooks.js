@@ -4,21 +4,20 @@ import SearchInput from "./SearchInput";
 import SearchResults from "./SearchResults";
 
 const SearchBooks = (props) => {
-  const { searchBooks, currentBooks, onMove, onSearch, onCloseSearch } = props;
+  const { searchBooks, query, setQuery, updateBookshelf, combinedBooks } =
+    props;
   return (
     <div className="search-books">
       <div className="search-books-bar">
         <Link to="/">
-          <button className="close-search" onClick={onCloseSearch}>
-            Close
-          </button>
+          <button className="close-search">Close</button>
         </Link>
-        <SearchInput onSearch={onSearch} />
+        <SearchInput query={query} setQuery={setQuery} />
       </div>
       <SearchResults
         searchBooks={searchBooks}
-        currentBooks={currentBooks}
-        onMove={onMove}
+        currentBooks={combinedBooks}
+        updateBookshelf={updateBookshelf}
       />
     </div>
   );

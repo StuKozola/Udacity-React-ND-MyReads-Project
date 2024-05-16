@@ -13,10 +13,14 @@ const Bookshelves = ({ books, updateBookshelf }) => {
       <Bookshelf
         shelf="Currently Reading"
         books={currentlyReading}
-        onMove={updateBookshelf}
+        updateBookshelf={updateBookshelf}
       />
-      <Bookshelf shelf="Read" books={wantToRead} onMove={updateBookshelf} />
-      <Bookshelf shelf="Want to Read" books={read} onMove={updateBookshelf} />
+      <Bookshelf
+        shelf="Want to Read"
+        books={wantToRead}
+        updateBookshelf={updateBookshelf}
+      />
+      <Bookshelf shelf="Read" books={read} updateBookshelf={updateBookshelf} />
     </div>
   );
 };
