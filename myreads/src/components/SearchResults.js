@@ -17,7 +17,7 @@ const SearchResults = (props) => {
     <div className="search-books-results">
       <ol className="books-grid">
         {updatedBookList.map((book) => (
-          <li id={book.id}>
+          <li key={book.id}>
             <Book book={book} updateBookshelf={updateBookshelf} />
           </li>
         ))}

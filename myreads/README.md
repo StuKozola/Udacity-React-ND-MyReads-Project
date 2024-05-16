@@ -1,6 +1,69 @@
+# Organization of the Project
+
+This project is a book tracking app that allows you to search for books and add them to one of three shelves: Currently Reading, Want to Read, and Read. You can also move books between shelves and remove them from your collection. There is a search page that allows you to search for books and add them to your collection.
+
+- [Organization of the Project](#organization-of-the-project)
+  - [Page Design](#page-design)
+  - [Directory Structure](#directory-structure)
+  - [Backend Server](#backend-server)
+    - [`getAll`](#getall)
+    - [`update`](#update)
+    - [`search`](#search)
+  - [Important](#important)
+- [Installation and Running](#installation-and-running)
+- [Create React App](#create-react-app)
+  - [Getting Started with Create React App](#getting-started-with-create-react-app)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+    - [`npm run eject`](#npm-run-eject)
+  - [Learn More](#learn-more)
+    - [Code Splitting](#code-splitting)
+    - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+    - [Making a Progressive Web App](#making-a-progressive-web-app)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Deployment](#deployment)
+    - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
+
+## Page Design
+
+On the main page, you can move books between shelves by selecting the shelf from the dropdown menu on each book. You can also remove books from your collection by selecting "None" from the dropdown menu. The main page also has a link to the search page where you can search for books and add them to your collection. Here is an image of the main page and the components that make up the page.
+
+![Main Page](../img/bookcase.png)
+
+The search page has an input field where you can type in a search term. The search results will appear below the input field. You can add books to your collection by selecting the shelf from the dropdown menu on each book. Here is an image of the search page and the components that make up the page.
+
+![Search Page](../img/search.png)
+
+## Directory Structure
+
+The project focusus primarily on developing a front end application in react. The project is organized into the following directories and files:
+
+- `public` - contains the `index.html` file that is the entry point for the application.
+- `src` - contains the source code for the application.
+  - `components` - contains the react components that make up the application.
+    - `Book.js` - the component that renders a single book.
+    - `BookCase.js` - the component that renders the main page.
+    - `BookShelf.js` - the component that renders a shelf of books.
+    - `BookShelfChanger.js` - the component that renders the dropdown menu for changing the shelf of a book.
+    - `Bookshelves.js` - the component that renders the different book shelves.
+    - `SearchBooks.js` - the component that renders the search page.
+    - `SearchInput.js` - the component that renders the search input field.
+    - `SearchResults.js` - the component that renders the search results.
+  - `hooks` - contains custom hooks used in the application.
+    - `useQuery.js` - a custom hook that parses the query from the books search page.
+  - `icons` - contains the icons used in the application.
+  - `App.js` - the main component that renders the application.
+  - `App.css` - the css file for the main component.
+  - `BooksAPI.js` - the backend server for the application.
+  - `index.js` - the entry point for the application.
+  - `index.css` - the css file for the entry point.
+  -
+
 ## Backend Server
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
+A backend server is provided. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
 
 - [`getAll`](#getall)
 - [`update`](#update)
@@ -43,15 +106,34 @@ search(query);
 
 ## Important
 
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+The backend API uses a fixed set of cached search results and is limited to a particular set of search terms. That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results. If it doesn't work, just try a new search term.
 
-## Create React App
+# Installation and Running
+
+Clone this repository
+
+```bash
+git clone https://github.com/StuKozola/Udacity-React-ND-MyReads-Project.git
+```
+
+To start the project, run the following commands:
+
+```bash
+cd Udacity-React-ND-MyReads-Project
+cd myreads
+npm install
+npm start
+```
+
+The app should open in your default browser at http://localhost:3000/
+
+# Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md).
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Follow the directions below if you wish to build this project from scratch.
 
 ## Available Scripts
 
